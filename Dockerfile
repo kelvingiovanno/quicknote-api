@@ -1,20 +1,14 @@
-# 1. Base image
 FROM node:20-alpine
 
-# 2. Working directory
 WORKDIR /app
 
-# 3. Copy package files
 COPY package*.json ./
+RUN npm install
 
-# 4. Install dependencies
-RUN npm install --production
-
-# 5. Copy source code
 COPY . .
 
-# 6. Expose port
+RUN npm run build
+
 EXPOSE 3000
 
-# 7. Start app
-CMD ["node", "src/server.ts"]
+CMD ["npm", "run", "start"]
