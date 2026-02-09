@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 3000
 
 # 7. Start app
-CMD ["node", "src/index.js"]
+CMD ["node", "src/server.ts"]
