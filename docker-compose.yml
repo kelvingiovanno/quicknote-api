@@ -1,5 +1,6 @@
 services:
-  quicknote-api:
+  api:
+    container_name: api
     build: .
     ports:
       - "${APP_PORT}:${APP_PORT}"
@@ -9,7 +10,8 @@ services:
     networks:
       - quicknote-database
 
-  quicknote-db:
+  db:
+    container_name: db
     image: mysql:8.0
     ports:
       - "${DB_PORT}:3306"
