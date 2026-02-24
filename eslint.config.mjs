@@ -12,5 +12,11 @@ export default defineConfig([
     },
     js.configs.recommended,
     tseslint.configs.recommended,
+    {
+        files: ["**/*.ts"],
+        rules: {
+            "@typescript-eslint/no-unused-vars": ["error", { argsIgnorePattern: "^_" }],
+        },
+    },
     globalIgnores(["dist", "node_modules"])
 ])
